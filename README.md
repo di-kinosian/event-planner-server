@@ -1,35 +1,28 @@
-# node-js-getting-started
+# EVENT PLANNER SERVER APPLICATION
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+This project was deployed with Herocu - [Link](https://floating-spire-28797-0031414f3322.herokuapp.com/).
 
-This application supports the [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+# API Endpoints
 
-## Running Locally
+## Events
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
+Retrieve the list of events.
 
-```sh
-$ git clone https://github.com/heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
+- **URL:** [https://floating-spire-28797-0031414f3322.herokuapp.com/api/events](https://floating-spire-28797-0031414f3322.herokuapp.com/api/events)
+- **Description:** Fetches all the events.
 
-Your app should now be running on [localhost:5001](http://localhost:5001/).
+## Registration
 
-## Deploying to Heroku
+Register for a specific event.
 
-Using resources for this example app counts towards your usage. [Delete your app](https://devcenter.heroku.com/articles/heroku-cli-commands#heroku-apps-destroy) and [database](https://devcenter.heroku.com/articles/heroku-postgresql#removing-the-add-on) as soon as you are done experimenting to control costs.
+- **URL:** (https://floating-spire-28797-0031414f3322.herokuapp.com/api/events/:eventId)
+- **Description:** Registers a participant for the specified event.
 
-By default, apps use Eco dynos if you are subscribed to Eco. Otherwise, it defaults to Basic dynos. The Eco dynos plan is shared across all Eco dynos in your account and is recommended if you plan on deploying many small apps to Heroku. Learn more about our low-cost plans [here](https://blog.heroku.com/new-low-cost-plans).
+## Participants
 
-Eligible students can apply for platform credits through our new [Heroku for GitHub Students program](https://blog.heroku.com/github-student-developer-program).
+Retrieve participants list of event.
 
-```
-$ heroku create
-$ git push heroku main
-$ heroku open
-```
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+- **URL:** (https://floating-spire-28797-0031414f3322.herokuapp.com/api/events/:eventId/participant)
+- **URL Parameters:**
+  - `eventId` (string) - The ID of the event.
+- **Description:** Check participants in event.
